@@ -1,4 +1,4 @@
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native'
+import { Button, Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
 import React, { useContext } from 'react'
 import { router } from 'expo-router'
 import UserContext from './Context/UserContext'
@@ -9,13 +9,15 @@ const Index = () => {
 
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <label>Enter your Name</label>
+            <Text>Enter your Name</Text>
             <TextInput
                 value={userName}
                 onChangeText={(t) => setUserName?.(t)}
                 style={styles.input} />
-            <Button onPress={() => router.push("/home")} title='Go Home' />
-
+            {/* <Button  onPress={() => router.push("/home")} title='Go Home'/> */}
+                <Pressable onPress={() => router.push("/home")} style={styles.btn}>
+                    <Text style={{color:"#fff"}} >Go Home</Text>
+                </Pressable>
 
         </View>
     );
@@ -27,6 +29,12 @@ const styles = StyleSheet.create({
     input: {
             borderWidth: 1,
             paddingVertical: 10,
-            marginVertical:10,      
+            marginVertical:10,
+            width:150,   
+    },
+    btn:{
+        backgroundColor:"#000",
+        padding:16,
+        borderRadius:16,
     }
 });
