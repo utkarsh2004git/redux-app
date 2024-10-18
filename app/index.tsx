@@ -29,8 +29,10 @@ const styles = StyleSheet.create({
     input: {
             borderWidth: 1,
             paddingVertical: 10,
+            paddingHorizontal:5,
             marginVertical:10,
-            width:150,   
+            borderRadius:10,
+            width:"60%",   
     },
     btn:{
         backgroundColor:"#000",
