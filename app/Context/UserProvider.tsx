@@ -1,15 +1,17 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useState } from 'react'
 import UserContext from './UserContext'
 
 const UserProvider = ({children}:{children:ReactNode}) => {
-  return (
-    <UserContext.Provider value={{}}>
-        {children}
-    </UserContext.Provider> 
-)
+    const [userName, setUserName] = useState("");
+
+    return (
+        <UserContext.Provider value={{userName, setUserName}}>
+            {children}
+        </UserContext.Provider>
+    );
 }
 
-export default UserProvider
+export default UserProvider;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

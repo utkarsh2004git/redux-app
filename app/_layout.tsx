@@ -1,11 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { router, Stack, useRouter } from 'expo-router'
+import UserProvider from './Context/UserProvider';
 
 const _layout = () => {
+  const router = useRouter();
   return (
-    <View>
-      <Text>_layout</Text>
-    </View>
+    <UserProvider>
+      <Stack >
+        <Stack.Screen name='index' options={{ headerShown: false }} />
+      </Stack>
+    </UserProvider>
   )
 }
 
