@@ -19,6 +19,10 @@ const Index = () => {
                     <Text style={{color:"#fff"}} >Go Home</Text>
                 </Pressable>
 
+                <Pressable onPress={() => router.push("/form")} style={styles.btn2}>
+                    <Text style={{color:"#fff"}} >Go to Form</Text>
+                </Pressable>
+
         </View>
     );
 }
@@ -38,5 +42,13 @@ const styles = StyleSheet.create({
         backgroundColor:"#000",
         padding:16,
         borderRadius:16,
-    }
+    },
+    
+    btn2:{
+        backgroundColor:"blue",
+        padding:10,
+        borderRadius:5,
+        marginVertical:15,
+    },
+
 });
